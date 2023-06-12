@@ -21,7 +21,7 @@ exports.register = async (req, res, next) => {
     const token = sign({ user, getRole }, process.env.JWT_SECRET, { expiresIn: 360000 });
     return res
       .status(200)
-      .json(getRole.keyRole === "user" ? { token, user: { ...user._doc, password: null, avatar: null, cv: null, university: null, fullName: null, address: null }, getRole } : getRole.keyRole === "admin" ? { token, admin: { ...user._doc, password: null }, getRole } : { token, company: { ...user._doc, password: null, avatar: null, nameCompany: null, address:null, webAddress: null, companyIntro: null, quantityEmployees: null, job: [], city: null }, getRole }) //role: getRole, department: getDepartment
+      .json(getRole.keyRole === "user" ? { token, user: { ...user._doc, password: null, avatar: null, cv: null, university: null, fullName: null, address: null }, getRole } : getRole.keyRole === "admin" ? { token, admin: { ...user._doc, password: null }, getRole } : { token, company: { ...user._doc, password: null, avatar: null, nameCompany: null, address:null, webAddress: null, companyIntro: null, quantityEmployees: null, job: [], city: null }, getRole }) 
 
   } catch (error) {
     return res.status(500).send(error.message);
@@ -48,7 +48,7 @@ exports.login = async (req, res, next) => {
 
 exports.resetPassword = async (req, res, next) => {
   const { password, resetPass, confirmPass } = req.body;
-  const user = await User.findById(req?.user?._id).populate("role").populate("department");
+  const user = await User.findById(req?.user?._id).populate("role");
   if ( !password || !resetPass)
     return res.status(400).send("Please fill in all the required fields!")
   try {
@@ -275,22 +275,13 @@ exports.getCity = async (req, res, next) => {
   }
 };
 
-exports.getDepartments = async (req, res, next) => {
-  try {
-    return res.status(200).json(await Department.find().lean());
-  } catch (error) {
-    return res.status(500).json(error);
-  }
-};
-
 exports.getAuthUser = async (req, res, next) => {
   try {
     const user = await User.findById(req?.user?._id).select("-password").lean();
     let getRole = await Role.findById(user.role);
-    let getDepartment = await Department.findById(user.department);
     if (!user)
       return res.status(400).send("User not found, Authorization denied..");
-    return res.status(200).json({ user: { ...user }, getRole, getDepartment });
+    return res.status(200).json({ user: { ...user }, getRole });
   } catch (error) {
     return res.status(500).send(error.message);
   }
