@@ -6,8 +6,8 @@ import { AdminActions } from "redux/types/admin";
 import { AlertActions } from "redux/types/alert";
 import types from "./types";
 
-const URI = "http://localhost:5000/api/v1/admin";
-const USER_URI = "http://localhost:5000/api/v1/user";
+const URI = "https://datn-tts-backend.onrender.com/api/v1/admin";
+const USER_URI = "https://datn-tts-backend.onrender.com/api/v1/user";
 
 // LOAD ADMIN
 export const loadAdmin = () => async (dispatch: Dispatch<AdminActions>) => {

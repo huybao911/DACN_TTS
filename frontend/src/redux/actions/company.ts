@@ -6,8 +6,8 @@ import { CompanyActions, CompanyAdminActions } from "redux/types/company";
 import { AlertActions } from "redux/types/alert";
 import types from "./types";
 
-const URI = "http://localhost:5000/api/v1/company";
-const USER_URI = "http://localhost:5000/api/v1/user";
+const URI = "https://datn-tts-backend.onrender.com/api/v1/company";
+const USER_URI = "https://datn-tts-backend.onrender.com/api/v1/user";
 
 // LOAD COMPANY
 export const loadCompany = () => async (dispatch: Dispatch<CompanyActions>) => {
