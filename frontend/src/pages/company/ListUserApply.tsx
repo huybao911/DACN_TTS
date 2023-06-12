@@ -354,7 +354,6 @@ const ListUserApply: React.FC = (): JSX.Element => {
                                                             }}
                                                         >
                                                             <Box style={{ display: "flex", flexDirection: "column" }}>
-                                                                <Avatar src={user.userApply.cv} sx={{ display: "flex", margin: "auto", height: "70px", width: "70px", marginTop: "5px", marginBottom: "10px" }} />
                                                                 <Box sx={{ textAlign: "center", fontWeight: "bold", marginBottom: "10px" }}>
                                                                     {user.userApply.username}
                                                                 </Box>
