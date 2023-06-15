@@ -283,19 +283,6 @@ const Users: React.FC = (): JSX.Element => {
                   }
                 />
               </Box>
-              <Box component={Link} to="/users/registerAdmin" style={{ fontSize: '14px', textDecoration: "none", color: "black" }}>
-                <Box style={{
-                  border: '1px solid rgba(158, 158, 158, 0.32)',
-                  borderRadius: '30px', textAlign: 'center',
-                  marginTop: '0.5px', padding: '11px', backgroundColor: "#f5f5f5",
-                  width: 180, display: 'flex', flexDirection: 'row', justifyContent: 'center'
-                }}>
-                  <AddIcon style={{ width: '14px', color: '#ee6f81', marginRight: "6px" }} />
-                  <Typography style={{ fontSize: '12px', paddingTop: "2.5px" }} >
-                    Thêm Người Dùng
-                  </Typography>
-                </Box>
-              </Box>
             </Box>
           </StyledRoot>
           <TableContainer>
