@@ -42,23 +42,23 @@ export const loginUser =
           type: types.USER_LOGIN_SUCCESS,
           payload: data,
         });
-        dispatch<any>(
-          setAlert({
-            msg: "Đăng nhập thành công!",
-            status: 200,
-            alertType: "success",
-          })
-        );
+        // dispatch<any>(
+        //   setAlert({
+        //     msg: "Đăng nhập thành công!",
+        //     status: 200,
+        //     alertType: "success",
+        //   })
+        // );
         dispatch<any>(loadUser());
       } catch (error: any) {
         dispatch({ type: types.USER_LOGIN_FAIL });
-        dispatch<any>(
-          setAlert({
-            msg: "Đăng nhập tài khoản người ứng tuyển thất bại!",
-            status: error.response.status,
-            alertType: "error",
-          })
-        );
+        // dispatch<any>(
+        //   setAlert({
+        //     msg: "Đăng nhập tài khoản người ứng tuyển thất bại!",
+        //     status: error.response.status,
+        //     alertType: "error",
+        //   })
+        // );
       } finally {
         setSubmitting(false);
       }

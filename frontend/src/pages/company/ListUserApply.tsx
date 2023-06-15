@@ -412,8 +412,8 @@ const ListUserApply: React.FC = (): JSX.Element => {
                                                 {job.usersApplyJob.map((user: any, index: number) =>
                                                     <Box key={job._id} style={{ display: "flex", flexDirection: "column", marginTop: "5px", paddingBottom: "10px" }}>
                                                         <Button onClick={(job) => handleOpenMenuCV(job, index)} >
-                                                            <IconButton onClick={(e) => dispatch(readCV(job._id, user._id))} style={{ color: "black" }}>
-                                                            </IconButton>
+                                                            <VisibilityIcon onClick={(e) => dispatch(readCV(job._id, user._id))} style={{ color: "black" }}>
+                                                            </VisibilityIcon>
                                                         </Button>
                                                         <Popover
                                                             open={!!anchorCV[index]}
