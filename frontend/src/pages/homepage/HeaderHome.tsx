@@ -117,7 +117,7 @@ const Homepage: React.FC = (): JSX.Element => {
                 <Divider sx={{ borderStyle: 'dashed' }} />
 
                 <StyledMenuItem component={NavLink} to={'/storageEvent'}>
-                  <Typography style={{ fontSize: '14px' }}>Sự Kiện Đã Lưu</Typography>
+                  <Typography style={{ fontSize: '14px' }}>Công việc Đã Lưu</Typography>
                 </StyledMenuItem>
 
                 <StyledMenuItem component={NavLink} to={'/applyJob'}>
