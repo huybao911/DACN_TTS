@@ -161,7 +161,7 @@ const DetailContent: React.FC = (): JSX.Element => {
                 <StyledRoot style={{ boxShadow: "none", overflowX: "hidden" }}>
                     <Toolbar>
                         <Link style={{ textDecoration: 'none' }} to={'/user'}>
-                            <img src="/hutech-logo.ico" style={{ height: "56px", width: "50px" }}></img>
+                            <img src="/logosnake.ico" style={{ height: "56px", width: "50px" }}></img>
                         </Link>
                         <Box textAlign={"center"} sx={{ flexGrow: 1 }}>
                             <StyledSearch
